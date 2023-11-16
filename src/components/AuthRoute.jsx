@@ -8,7 +8,7 @@ const AuthRoute = () => {
   return user ? (
     <Outlet />
   ) : (
-    <Navigate to={"/login"} replace state={{ path: location.pathname }} />
+    <Navigate to={"/home"} replace state={{ path: location.pathname }} />
   );
 };
 

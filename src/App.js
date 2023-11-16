@@ -1,27 +1,28 @@
-import { Container } from "react-bootstrap";
+
 import { Route, Routes } from "react-router-dom";
-import Register from "./pages/Registration";
-import Login from "./pages/Loginpage";
 import AuthRoute from "./components/AuthRoute";
-import Home from "./pages/Home";
+import NavBar from "./components/navbar";
+import LandingPage from "./pages/Home";
+import SignUp from "./pages/signup";
+import Login1 from "./pages/login";
+import Glossary from "./pages/Glossary";
 
 const App = () => {
   return (
     <>
-      <Container
-        className="d-flex align-items-center justify-content-center"
-        style={{ minHeight: "100vh" }}>
-        <div className="w-100" style={{ maxWidth: "400px" }}>
+    <NavBar></NavBar>
+      <div>
           <Routes>
             <Route element={<AuthRoute />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/home" element={<Home />} />
             </Route>
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<LandingPage></LandingPage>} />
+              <Route path="/home" element={<LandingPage></LandingPage>} />
+            <Route path="/register" element={<SignUp></SignUp>} />
+            <Route path="/login" element={<Login1></Login1>} />
+            <Route path="/glossary" element={<Glossary></Glossary>} />
           </Routes>
         </div>
-      </Container>
+    
     </>
   );
 };

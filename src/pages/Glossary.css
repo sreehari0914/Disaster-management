@@ -1,0 +1,66 @@
+/* Glossary container */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+.glossary-container{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+.glossary-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+  }
+  .subhead{
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .glossary-bg {
+    background-image: linear-gradient(to right, rgb(99, 99, 99), rgb(54, 45, 59));
+    background-size: cover;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    background-position: center;
+    height: vh;
+    width: 80%;
+    color: white;
+    font-family: 'Montserrat', cursive;
+    border-radius: 3rem;
+    font-size: 5rem;
+    text-align: center;
+    padding: 4%;
+  }
+.glossary {
+    padding: 4rem;
+    margin: 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px rgba(152, 136, 136, 0.2);
+    font-family: 'Open Sans', sans-serif;
+  }
+  /* Glossary term */
+  .glossary-term {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .glossary-definition {
+    font-size: 1.6rem;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 4rem;
+    background-image: linear-gradient(to right, rgb(73, 72, 72), rgb(45, 29, 50));
+    box-shadow: 0 0 10px rgba(251, 250, 250, 0.2);
+    color: #fff;
+    border-radius: 2rem;
+    padding: 2rem;
+    margin-bottom: 4rem;
+  }
