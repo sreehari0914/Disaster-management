@@ -72,10 +72,20 @@ const NavBar = () => {
               <Nav.Link as={Link} to="/contact"
               href="#contact"
               style={{...navLinkStyle, ...(highlightedLink === 'contact' && highlightedNavLinkStyle) }}
-              onMouseEnter={() => setHighlightedLink('home')}
+              onMouseEnter={() => setHighlightedLink('contact')}
               onMouseLeave={() => setHighlightedLink('null')}
               >
                 Contact
+              </Nav.Link>
+            )}
+              {auth && (
+              <Nav.Link as={Link} to="/CalamityReportForm"
+              href="#CalamityReportForm"
+              style={{...navLinkStyle, ...(highlightedLink === 'CalamityReportForm' && highlightedNavLinkStyle) }}
+              onMouseEnter={() => setHighlightedLink('CalamityReportForm')}
+              onMouseLeave={() => setHighlightedLink('null')}
+              >
+                CalamityReportForm
               </Nav.Link>
             )}
           </Nav>

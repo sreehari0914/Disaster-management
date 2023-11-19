@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from "../supabase/client";
 import { useAuth } from "../context/AuthProvider";
+import logo2 from "../images/brand communication-amico.png"
 
 const VolunteerRegistrationForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-
     experience: '',
     skill: '',
   });
@@ -48,7 +48,6 @@ const VolunteerRegistrationForm = () => {
           contact: formData.phone,
           experience: formData.experience,
           name: formData.name,
-         
         },
       ]);
 
@@ -105,29 +104,15 @@ const VolunteerRegistrationForm = () => {
   }, [user]);
 
   return (
-    <div>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '100vh',
-          backgroundColor: '#2b3035',
-        }}
-      >
-        <div
-          className="container registration-container"
-          style={{
-            color: '#fff',
-            padding: '20px',
-            borderRadius: '8px',
-            boxShadow: '0 4px 8px rgba(255, 255, 255, 1.2)',
-          }}
-        >
-          <div className="row justify-content-center">
-            <div className="col-md-6">
-              <h2 className="mb-4">VOLUNTEER REGISTRATION</h2>
-              <form onSubmit={handleSubmit}>
+    <div style={{ backgroundColor: '#2b3035', minHeight: '100vh', padding: '50px', color: '#fff', display: 'flex' }}>
+      <div style={{ flex: 1, marginRight: '20px' }}>
+        {/* Replace 'imagePath' with the path to your image */}
+        <img src={logo2} alt="LeftImage" style={{ maxWidth: '100%', height: '85%' }} />
+      </div>
+
+      <div style={{ flex: 2, maxWidth: '700px', padding: '30px', boxSizing: 'border-box' }}>
+        <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>VOLUNTEER REGISTRATION</h2>
+        <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="name" className="form-label">
                     Name
@@ -197,9 +182,6 @@ const VolunteerRegistrationForm = () => {
               </form>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
   );
 };
 
