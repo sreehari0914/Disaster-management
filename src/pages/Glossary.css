@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 .glossary-container {
   background-color: #222;
   color: #fff;
@@ -38,7 +38,8 @@
   color: white;
   font-family: 'Montserrat', cursive;
   border-radius: 3rem;
-  font-size: 5rem;
+  font-size: 5.5rem;
+  font-weight: bolder;
   text-align: center;
   padding: 4%;
 }

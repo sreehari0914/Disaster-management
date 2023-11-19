@@ -1,4 +1,3 @@
-
 import { Route, Routes } from "react-router-dom";
 import AuthRoute from "./components/AuthRoute";
 import NavBar from "./components/navbar";

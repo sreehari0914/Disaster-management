@@ -57,7 +57,8 @@ const Glossary = () => {
     <div className="glossary-container">
       <div className="glossary">
         <div className="glossary-header">
-          <h1 className="glossary-bg">Glossary<br></br><h2 className="subhead">General Awareness</h2></h1>
+          <h1 className="glossary-bg">Glossary</h1>
+          <br></br><h2 className="subhead">General Awareness</h2>
         </div>
         {terms.map((term) => (
           <div key={term.term}>
