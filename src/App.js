@@ -6,6 +6,7 @@ import LandingPage from "./pages/Home";
 import SignUp from "./pages/signup";
 import Login1 from "./pages/login";
 import Glossary from "./pages/Glossary";
+import VolunteerRegistrationForm from "./pages/contact";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <div>
           <Routes>
             <Route element={<AuthRoute />}>
+            <Route path="/contact" element={<VolunteerRegistrationForm></VolunteerRegistrationForm>} />
             </Route>
             <Route path="/" element={<LandingPage></LandingPage>} />
               <Route path="/home" element={<LandingPage></LandingPage>} />

@@ -2,7 +2,7 @@ import React, { useEffect, useState,useRef } from 'react';
 import { Container, Row, Col, Form, Button, Carousel } from 'react-bootstrap';
 //import logo1 from './images/logo1.jpg';
 import { Alert,  Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { supabase } from "../supabase/client";
 import logo1 from '../images/logo1.jpg';
 
@@ -16,6 +16,8 @@ const pageContainerStyle = {
 };
 
 const SignUp = () => {
+  
+  
   useEffect(() => {
     // Disable scrolling when the component mounts
     //document.body.style.overflow = 'hidden';
@@ -161,9 +163,7 @@ const SignUp = () => {
                 </Button>
 
                 {/* Sign Up Button */}
-                <p style={{ marginTop: '15px', textAlign: 'center', color: '#e6e7fc', fontSize: '14px' }}>
-                  Aldready have an account? <a href="/home" style={signUpLinkStyle} >Login</a>
-                </p>
+                
               </Form>
             </Container>
           </Col>
@@ -240,9 +240,8 @@ const signUpButtonStyle = {
   };
 
   const signUpLinkStyle = {
-    color: '#2f21d9',
+    color: 'ffff',
     fontSize: '14px',
-    textDecoration: 'underline',
     cursor: 'pointer',
   };
   

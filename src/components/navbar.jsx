@@ -29,7 +29,7 @@ const NavBar = () => {
           <Nav className="me-auto">
             {console.log(auth)}
             {!auth && (
-              <Nav.Link as={Link} to="/"
+              <Nav.Link as={Link} to="/home"
               href="#home"
               style={{...navLinkStyle, ...(highlightedLink === 'home' && highlightedNavLinkStyle) }}
               onMouseEnter={() => setHighlightedLink('home')}
@@ -69,13 +69,13 @@ const NavBar = () => {
               </Nav.Link>
             )}
             {auth && (
-              <Nav.Link as={Link} to="/"
-              href="#home"
-              style={{...navLinkStyle, ...(highlightedLink === 'home' && highlightedNavLinkStyle) }}
+              <Nav.Link as={Link} to="/contact"
+              href="#contact"
+              style={{...navLinkStyle, ...(highlightedLink === 'contact' && highlightedNavLinkStyle) }}
               onMouseEnter={() => setHighlightedLink('home')}
               onMouseLeave={() => setHighlightedLink('null')}
               >
-                Home
+                Contact
               </Nav.Link>
             )}
           </Nav>
