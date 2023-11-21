@@ -1,0 +1,58 @@
+.App {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #2b3035;
+  }
+  
+  .payment-container {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    flex-direction: row; /* Change to row */
+  }
+  
+  .payment-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0 20px;
+  }
+  
+  .payment-image img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px; /* Add margin for spacing */
+  }
+  
+  .payment-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .payment-form h1 {
+    color: #5332e6;
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .payment-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .payment-form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  

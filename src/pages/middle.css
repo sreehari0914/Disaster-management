@@ -1,0 +1,86 @@
+/* Middle.css */
+
+.middle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #2b3035; /* Dark background color */
+    color: #ffffff; /* Text color */
+    padding: 4%;
+    font-family: 'Roboto', sans-serif; /* Modern and stylish font family */
+  }
+  
+  .centered-text {
+    display: flex;
+    color: #6658ff;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+    
+  }
+  
+  .text-on-right,
+  .text-on-left {
+    display: flex;
+    width: 100%;
+    margin-top: 5%;
+    
+  }
+  
+  .image-container {
+    display: flex;
+    flex-direction: row;
+    flex: 0.5;
+    padding: 20px;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .text-container {
+    flex: 0.8;
+    text-align: center;
+    padding: 4%;
+    background-color: #2b3035; /* Background color for text on the right or left */
+    font-family: 'Poppins', sans-serif; /* Another modern and stylish font family */
+    border-radius: 2rem;
+  }
+  
+  .text-on-left {
+    display: flex;
+    width: 100%;
+    margin-top: 5%;
+  }
+  
+  .text-container h3 {
+    color: #9cceff; /* Heading color */
+    font-size: 2.8rem;
+    font-family: 'Montserrat', sans-serif; /* Yet another modern and stylish font family */
+  }
+  
+  .text-container p {
+    font-size: 1.6rem;
+    line-height: 1.5; /* Adjust line height for better readability */
+    color: #ffffff; /* Text color */
+  
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    .text-on-right,
+    .text-on-left {
+      flex-direction: column;
+    }
+  }
+  
+  /* Additional styles for the third section */
+  .text-on-left .image-container {
+    order: 2; /* Change the order to switch positions */
+  }
+  
+  .text-on-left .text-container {
+    order: 1; /* Change the order to switch positions */
+  }

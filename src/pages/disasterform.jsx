@@ -1,17 +1,50 @@
 import React, { useState } from 'react';
 import disasterImage from '../images/Helping a partner-rafiki.png'; // Replace with the actual path to your image
-
+import { supabase } from "../supabase/client";
+import { useAuth } from "../context/AuthProvider";
 const CalamityReportForm = () => {
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [district, setDistrict] = useState('');
   const [disasterType, setDisasterType] = useState('');
   const [description,  setDescription] = useState('');
+  const [DII,setDII]=useState('');
 
-  const submitForm = () => {
-    // Add your form submission logic here
-    const location = `${city}, ${state}, ${district}`;
-    alert(`Form submitted!\nLocation: ${location}\nType of Disaster: ${disasterType}`);
+
+  const {user}=useAuth();
+  const submitForm = async (e) => {
+    e.preventDefault();
+   
+    try {
+      const { data, error } = await supabase.from('Disaster').insert([
+        {
+          state:state,
+          district:district,
+          town:city,
+          desc:description,
+          id:user.id,
+          DII:DII,
+          type:disasterType,
+          
+        },
+      ]);
+
+      if (error) {
+        console.error('Error adding disaster:', error);
+        return;
+      }
+       setCity('');
+       setDescription('');
+       setDisasterType('');
+       setDistrict('');
+       setState('');
+       setDII('');
+       
+
+      console.log('Disaster added:', data);
+    } catch (error) {
+      console.error('Error adding disaster:', error.message);
+    }
   };
 
   return (
@@ -103,7 +136,7 @@ const CalamityReportForm = () => {
             <option value="flood">Flood</option>
             <option value="cyclone">Cyclone</option>
             <option value="landslide">Landslide</option>
-            <option value="wildfire">Wildfire</option>
+            <option value="Forest Fire">Forest Fire</option>
             {/* Add more options as needed */}
           </select>
         </div>
@@ -116,6 +149,24 @@ const CalamityReportForm = () => {
             placeholder="Description"
             style={{ width: '100%', padding: '20px', boxSizing: 'border-box' }}
           />
+        </div>
+        <div style={{ marginBottom: '20px' }}>
+          <label style={{ display: 'block', marginBottom: '5px' }}>Disaster impact index</label>
+          <select
+            value={DII}
+            onChange={(e) => setDII(e.target.value)}
+            style={{ width: '100%', padding: '10px', boxSizing: 'border-box' }}
+          >
+            <option value="" disabled selected>
+              Select an option
+            </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            {/* Add more options as needed */}
+          </select>
         </div>
 
         <button

@@ -1,7 +1,8 @@
 import { TypeAnimation } from 'react-type-animation';
 import { Container, Row, Col } from 'react-bootstrap';
 import aid from '../images/Humanitarian Help-cuate (1).png'
-import MiddlePage from '../components/midhome';
+import Footer from './footer';
+import Middle from './middle';
 const LandingPage = () => {
   return (
     <Container fluid style={{ backgroundColor: '#2b3035', minHeight: '100vh' }}>
@@ -52,9 +53,9 @@ const LandingPage = () => {
         </Col>
         
       </Row>
-      <MiddlePage></MiddlePage>
-    </Container>
-    
+      <Middle />
+      <Footer />
+      </Container>
   );
 };
 

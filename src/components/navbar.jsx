@@ -78,6 +78,7 @@ const NavBar = () => {
                 Contact
               </Nav.Link>
             )}
+
               {auth && (
               <Nav.Link as={Link} to="/CalamityReportForm"
               href="#CalamityReportForm"
@@ -86,6 +87,16 @@ const NavBar = () => {
               onMouseLeave={() => setHighlightedLink('null')}
               >
                 CalamityReportForm
+              </Nav.Link>
+            )}
+             {auth && (
+              <Nav.Link as={Link} to="/CalamityList"
+              href="#CalamityList"
+              style={{...navLinkStyle, ...(highlightedLink === 'CalamityList' && highlightedNavLinkStyle) }}
+              onMouseEnter={() => setHighlightedLink('CalamityList')}
+              onMouseLeave={() => setHighlightedLink('null')}
+              >
+                Calamity List
               </Nav.Link>
             )}
           </Nav>

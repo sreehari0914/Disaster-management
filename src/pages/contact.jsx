@@ -70,6 +70,26 @@ const VolunteerRegistrationForm = () => {
     }
   };
 
+  const handleUpdate = async () => {
+    try {
+      const { data, error } = await supabase.from('Users').update({
+        skill: formData.skill,
+        contact: formData.phone,
+        experience: formData.experience,
+        name: formData.name,
+      }).eq('id', user.id);
+
+      if (error) {
+        console.error('Error updating user:', error);
+        return;
+      }
+
+      console.log('User updated:', data);
+    } catch (error) {
+      console.error('Error updating user:', error.message);
+    }
+  };
+
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -113,75 +133,79 @@ const VolunteerRegistrationForm = () => {
       <div style={{ flex: 2, maxWidth: '700px', padding: '30px', boxSizing: 'border-box' }}>
         <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>VOLUNTEER REGISTRATION</h2>
         <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                  <label htmlFor="name" className="form-label">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="phone" className="form-label">
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    className="form-control"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-               
-                <div className="mb-3">
-                  <label htmlFor="experience" className="form-label">
-                    Experience
-                  </label>
-                  <textarea
-                    className="form-control"
-                    id="experience"
-                    name="experience"
-                    value={formData.experience}
-                    onChange={handleChange}
-                    rows="3"
-                    required
-                  ></textarea>
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="skill" className="form-label">
-                    Skill
-                  </label>
-                  <select
-                    className="form-select"
-                    id="skill"
-                    name="skill"
-                    value={formData.skill}
-                    onChange={handleChange}
-                    required
-                  >
-                    <option value="">Select a skill</option>
-                    {skillOptions.map((skill, index) => (
-                      <option key={index} value={skill}>
-                        {skill}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <button type="submit" className="btn btn-primary">
-                  Register Me
-                </button>
-              </form>
-            </div>
+          <div className="mb-3">
+            <label htmlFor="name" className="form-label">
+              Name
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
           </div>
+          <div className="mb-3">
+            <label htmlFor="phone" className="form-label">
+              Phone
+            </label>
+            <input
+              type="tel"
+              className="form-control"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="experience" className="form-label">
+              Experience
+            </label>
+            <textarea
+              className="form-control"
+              id="experience"
+              name="experience"
+              value={formData.experience}
+              onChange={handleChange}
+              rows="3"
+              required
+            ></textarea>
+          </div>
+          <div className="mb-3">
+            <label htmlFor="skill" className="form-label">
+              Skill
+            </label>
+            <select
+              className="form-select"
+              id="skill"
+              name="skill"
+              value={formData.skill}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select a skill</option>
+              {skillOptions.map((skill, index) => (
+                <option key={index} value={skill}>
+                  {skill}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <button type="submit" className="btn btn-primary" style={{background:'linear-gradient(to right, #8e2de2, #4a00e0)'}}>
+              Register Me
+            </button>
+            <button type="button" className="btn btn-secondary" onClick={handleUpdate} style={{background:'linear-gradient(to right, #8e2de2, #4a00e0)'}}>
+              Update
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 };
 
