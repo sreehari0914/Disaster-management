@@ -56,7 +56,7 @@ const CalamityReportForm = () => {
 
 
       <div style={{ flex: 2, maxWidth: '700px', padding: '30px', boxSizing: 'border-box' }}>
-        <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Calamity Report Form</h2>
+        <h2 style={{ textAlign: 'center', marginBottom: '20px',fontFamily:'poppins,sans-serif' }}>CALAMITY REPORT FORM</h2>
         
 
         <div style={{ marginBottom: '20px' }}>
@@ -172,7 +172,7 @@ const CalamityReportForm = () => {
         <button
           type="button"
           onClick={submitForm}
-          style={{ backgroundColor: '#007bff', color: '#fff', padding: '15px', border: 'none', cursor: 'pointer', width: '100%' }}
+          style={{ background:'linear-gradient(to right, #8e2de2, #4a00e0)', color: '#fff', padding: '15px', border: 'none', cursor: 'pointer', width: '100%' }}
         >
           Submit
         </button>

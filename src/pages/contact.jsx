@@ -131,7 +131,7 @@ const VolunteerRegistrationForm = () => {
       </div>
 
       <div style={{ flex: 2, maxWidth: '700px', padding: '30px', boxSizing: 'border-box' }}>
-        <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>VOLUNTEER REGISTRATION</h2>
+        <h2 style={{ textAlign: 'center', marginBottom: '20px',fontFamily:'poppins,sans-serif' }}>VOLUNTEER REGISTRATION</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="name" className="form-label">
@@ -196,7 +196,7 @@ const VolunteerRegistrationForm = () => {
             </select>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <button type="submit" className="btn btn-primary" style={{background:'linear-gradient(to right, #8e2de2, #4a00e0)'}}>
+            <button type="submit" onClick={handleSubmit} className="btn btn-primary" style={{background:'linear-gradient(to right, #8e2de2, #4a00e0)'}}>
               Register Me
             </button>
             <button type="button" className="btn btn-secondary" onClick={handleUpdate} style={{background:'linear-gradient(to right, #8e2de2, #4a00e0)'}}>
