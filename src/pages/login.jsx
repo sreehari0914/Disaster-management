@@ -107,9 +107,7 @@ const Login1 = () => {
                 <strong>LOGIN</strong>
               </Button>
 
-              <p style={{ marginTop: '15px', textAlign: 'center', color: '#e6e7fc', fontSize: '14px' }}>
-                Don't have an account? <Link to="#" style={{ color: '#2f21d9', fontSize: '14px', textDecoration: 'underline', cursor: 'pointer' }}>Sign up</Link>
-              </p>
+
             </Form>
           </Container>
         </Col>

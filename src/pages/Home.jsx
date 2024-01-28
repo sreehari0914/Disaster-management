@@ -54,6 +54,7 @@ const LandingPage = () => {
         
       </Row>
       <Middle />
+      <hr style={{borderTop: '0.1rem solid grey'}} />
       <Footer />
       </Container>
   );

@@ -104,11 +104,6 @@ const Signup = () => {
                 </Button>
 
                 {/* Sign Up Button */}
-                <p style={{ marginTop: '15px', textAlign: 'center', color: '#e6e7fc', fontSize: '14px' }}>
-                  Already have an account? <Link to="#" style={signUpLinkStyle}>
-                    Login
-                  </Link>
-                </p>
               </Form>
             </Container>
           </Col>
