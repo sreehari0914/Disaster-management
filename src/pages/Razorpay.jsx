@@ -67,8 +67,8 @@ function Payment() {
         alert('Please enter the amount');
       } else {
           var options = {
-              key: "rzp_test_od4n3mUKz7V3Vs",
-              key_secret: "JIaHNWFufjxQeuk7NDC1duBu",
+              key: process.env.RAZORPAY_URL,
+              key_secret: process.env.RAZORPAY_KEY,
               amount: amount * 100,
               currency: "INR",
               name: "AID CONNECT",
