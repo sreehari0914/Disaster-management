@@ -9,7 +9,7 @@ const VolunteerRegistrationForm = () => {
     phone: '',
     experience: '',
     skill: '',
-  });
+  })
 
   const { user } = useAuth();
 
